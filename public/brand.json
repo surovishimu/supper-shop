@@ -2,31 +2,49 @@
     {
         "id": 1,
         "brand_name": "L'Oréal",
-        "brand_img": "https://i.ibb.co/NZ26GZ2/loreal-1.jpg"
+        "brand_img": "https://i.ibb.co/NZ26GZ2/loreal-1.jpg",
+        "slider_1":"https://10538-caraco.wpnet.stylenet.com/wp-content/uploads/sites/431/2019/08/loreal_professionnel_banner.png",
+        "slider_2":"https://gphb01pdazurefileshare.blob.core.windows.net/sys-master-hybris-media/h58/h6b/16737623277598/Loreal%20Main%20LP%20Banner.jpg",
+        "slider_3":"https://salonsupplies.co.uk/cdn/shop/collections/L_Oreal_Banner.jpg?v=1632500103"
     },
     {
         "id": 2,
         "brand_name": "Estée Lauder",
-        "brand_img": "https://i.ibb.co/bNvmYfQ/Estee-Lauder-Affiliate-Banner-818x400-1605566416.jpg"
+        "brand_img": "https://i.ibb.co/bNvmYfQ/Estee-Lauder-Affiliate-Banner-818x400-1605566416.jpg",
+        "slider_1":"https://www.sephora.ae/dw/image/v2/BCZG_PRD/on/demandware.static/-/Library-Sites-SephoraV2/en/dwcc7f12b6/Brands_Visuals/ESTEE/EL_900_280_institutional_banner.jpg?q=75",
+        "slider_2":"https://cdn.singpromos.com/wp-content/uploads/2021/11/Estee-Lauder-feat-19-Nov-2021.jpg",
+        "slider_3":"https://mypromo.my/wp-content/uploads/2020/10/estee-lauder.jpg"
     },
     {
         "id": 3,
         "brand_name": "Chanel",
-        "brand_img": "https://i.ibb.co/7yXkBDS/1697034047698-230929specialeditionsasset1300x800jpg-800x1300.jpg"
+        "brand_img": "https://i.ibb.co/7yXkBDS/1697034047698-230929specialeditionsasset1300x800jpg-800x1300.jpg",
+        "slider_1":"https://www.nylon.com.sg/wp-content/uploads/2021/06/Chanel-Factory-5-banner-scaled.jpg",
+        "slider_2":"https://theperfume.vn/wp-content/uploads/2016/09/banner-chanel-perfume.jpg",
+        "slider_3":"https://theperfume.vn/wp-content/uploads/2013/12/banner-chanel-perfume.jpg"
     },
     {
         "id": 4,
         "brand_name": "Dior",
-        "brand_img": "https://i.ibb.co/r4PQz9Y/Columns-by-Kari-The-Dior-Makeup-Routine.jpg"
+        "brand_img": "https://i.ibb.co/r4PQz9Y/Columns-by-Kari-The-Dior-Makeup-Routine.jpg",
+        "slider_1":"https://charleroi-duty-free.com/media/contentmanager/content/1003x430_HP_Banners_Miss_Dior.jpg",
+        "slider_2":"https://file.hstatic.net/1000340570/article/savage_274e526c589b4582a675c21fadd09542.png",
+        "slider_3":"https://i0.wp.com/www.nylon.com.sg/wp-content/uploads/2022/11/dior-holiday-22-banner-scaled.jpg?fit=2560%2C1000&ssl=1"
     },
     {
         "id": 5,
         "brand_name": "Avon",
-        "brand_img": "https://i.ibb.co/10k5YbC/940-main.jpg"
+        "brand_img": "https://i.ibb.co/10k5YbC/940-main.jpg",
+        "slider_1":"https://market.us/wp-content/uploads/2022/08/Avon-Products-Inc_Banner-01.jpg",
+        "slider_2":"https://teamdragonavon.files.wordpress.com/2012/06/banner_getreadyforsummer_e1.jpg",
+        "slider_3":"https://png.pngtree.com/thumb_back/fw800/background/20230527/pngtree-some-different-hair-products-sitting-on-a-table-image_2694548.jpg"
     },
     {
         "id": 6,
         "brand_name": "Revlon",
-        "brand_img": "https://i.ibb.co/f8h3QFL/Revlon-Cosmetics-Maker.jpg"
+        "brand_img": "https://i.ibb.co/f8h3QFL/Revlon-Cosmetics-Maker.jpg",
+        "slider_1":"https://revlon.co.in/cdn/shop/collections/Homepage-Banner-Mobile-_650x340_d859d923-d3ad-45a2-ac5f-029f888793cd.gif?v=1697219951",
+        "slider_2":"https://cdn.accentuate.io/273831755943/1628868947359/Revlon-Banner.jpg?v=0",
+        "slider_3":"https://media1.popsugar-assets.com/files/thumbor/d93sAhYGPSs7-ezlK4APleXYjvc=/108x0:1439x699/fit-in/1500x700/top/filters:format_auto():quality(85):upscale()/2023/09/08/926/n/1922153/e52c6a2464fb8e92220c16.56358753_.png"
     }
 ]
