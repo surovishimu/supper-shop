@@ -1,7 +1,8 @@
-
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const BrandWiseProduct = ({ brand }) => {
-    const { image, name, brandName, type, description, price, rating } = brand;
+    const { _id, image, name, brandName, type, description, price, rating } = brand;
     const renderRatingStars = () => {
         const stars = [];
         for (let i = 1; i <= rating; i++) {
@@ -23,7 +24,9 @@ const BrandWiseProduct = ({ brand }) => {
                     <h2>Price:{price}</h2>
                     <p>Rating:{renderRatingStars()}</p>
 
-                    <button className="btn bg-amber-500 text-white hover:bg-amber-700">show details</button>
+                    <Link to={`/brands/${_id}`}>
+                        <button className="btn bg-amber-500 text-white hover:bg-amber-700">show details</button>
+                    </Link>
                     <button className="btn bg-amber-500 text-white hover:bg-amber-700">Update Product</button>
 
                 </div>
@@ -31,5 +34,7 @@ const BrandWiseProduct = ({ brand }) => {
         </div>
     );
 };
-
+BrandWiseProduct.propTypes = {
+    brand: PropTypes.object.isRequired
+}
 export default BrandWiseProduct;

@@ -5,6 +5,8 @@ import AddProducts from "../Pages/AddProducts/AddProducts";
 import Mycart from "../Pages/MyCart/Mycart";
 import Login from "../Pages/Login/Login";
 import SingleBrand from "../Pages/SingleBrand/SingleBrand";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import ProductDetails from "../Pages/SingleBrand/ProductDetails";
 
 
 
@@ -12,6 +14,7 @@ const myCreatedRouter = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -26,7 +29,7 @@ const myCreatedRouter = createBrowserRouter([
             {
                 path: '/addproducts',
                 element: <AddProducts></AddProducts>,
-                
+
             },
             {
                 path: '/mycart',
@@ -35,6 +38,11 @@ const myCreatedRouter = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path:'/brands/:id',
+                element:<ProductDetails></ProductDetails>,
+                loader:()=>fetch('http://localhost:5000/products')
             }
         ]
     }
