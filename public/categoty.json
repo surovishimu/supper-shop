@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/face-wash-sub-category.webp",
+      "category": "Facewash"
+    },
+    {
+      "id": 2,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/cream-sub-category.webp",
+      "category": "Cream"
+    },
+    {
+      "id": 3,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/moisturizer-sub-category.webp",
+      "category": "Moisturiser"
+    },
+    {
+      "id": 4,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/serum-sub-category.webp",
+      "category": "Serum"
+    },
+    {
+      "id": 5,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/soap-sub-category.webp",
+      "category": "Soap"
+    },
+    {
+      "id": 6,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/shampoo-sub-category.webp",
+      "category": "Shampoo"
+    },
+    {
+      "id": 7,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/lipsticks-sub-category.webp",
+      "category": "Lipsticks"
+    },
+    {
+      "id": 8,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/lip-balm-sub-category.webp",
+      "category": "Lip Balm"
+    },
+    {
+      "id": 9,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/foundation-sub-category.webp",
+      "category": "Foundation"
+    },
+    {
+      "id": 10,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/eyeshadow-sub-category.webp",
+      "category": "Eyeshadow"
+    },
+    {
+      "id": 11,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/concealer-sub-category.webp",
+      "category": "Concealar"
+    },
+    {
+      "id": 12,
+      "image": "https://beautysiaa.com/wp-content/uploads/2023/08/nail-polish-sub-category.webp",
+      "category": "Nail Polish"
+    }
+  ]
+  

@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "brand_name": "L'Oréal",
+        "brand_img": "https://i.ibb.co/NZ26GZ2/loreal-1.jpg"
+    },
+    {
+        "id": 2,
+        "brand_name": "Estée Lauder",
+        "brand_img": "https://i.ibb.co/bNvmYfQ/Estee-Lauder-Affiliate-Banner-818x400-1605566416.jpg"
+    },
+    {
+        "id": 3,
+        "brand_name": "Chanel",
+        "brand_img": "https://i.ibb.co/7yXkBDS/1697034047698-230929specialeditionsasset1300x800jpg-800x1300.jpg"
+    },
+    {
+        "id": 4,
+        "brand_name": "Dior",
+        "brand_img": "https://i.ibb.co/r4PQz9Y/Columns-by-Kari-The-Dior-Makeup-Routine.jpg"
+    },
+    {
+        "id": 5,
+        "brand_name": "Avon",
+        "brand_img": "https://i.ibb.co/10k5YbC/940-main.jpg"
+    },
+    {
+        "id": 6,
+        "brand_name": "Revlon",
+        "brand_img": "https://i.ibb.co/f8h3QFL/Revlon-Cosmetics-Maker.jpg"
+    }
+]

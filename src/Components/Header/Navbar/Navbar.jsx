@@ -5,18 +5,18 @@ import Logo from "./Logo";
 const Navbar = () => {
 
     const links = <>
-        <li className="text-lg mr-2 font-semibold" ><NavLink className={({ isActive, isPending }) =>
+        <li className="text-lg mr-2 font-semibold text-white" ><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-amber-600 font-semibold underline" : ""
         } to={'/'}>Home</NavLink></li>
-        <li className="text-lg mr-2 font-semibold"><NavLink className={({ isActive, isPending }) =>
+        <li className="text-lg mr-2 font-semibold  text-white"><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ?  "text-amber-600 font-semibold underline" : ""
         } to={'/addproducts'}>Add Product</NavLink></li>
-        <li className="text-lg font-semibold"><NavLink className={({ isActive, isPending }) =>
+        <li className="text-lg font-semibold  text-white"><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-amber-600 font-semibold underline" : ""
         } to={'/mycart'}>My Cart</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-black">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -35,7 +35,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end ">
                 <ul className=" flex ">
-                    <li className="text-lg font-semibold">
+                    <li className="text-lg font-semibold  text-white">
                         <NavLink className={({ isActive, isPending }) =>
                             isPending ? "pending" : isActive ? "text-amber-600 underline" : ""
                         } to={'/login'}>Login</NavLink>
