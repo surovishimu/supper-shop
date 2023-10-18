@@ -1,8 +1,44 @@
+import Swal from 'sweetalert2'
 
 const AddProducts = () => {
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission here (e.g., send data to the server)
+        const form = e.target;
+        const image = form.image.value;
+        const name = form.name.value;
+        const brandName = form.brand.value;
+        const type = form.type.value;
+        const price = form.price.value;
+        const description = form.shortDescription.value;
+        const rating = form.rating.value;
+        // console.log(image,name,brandName,type,price,description,rating);
+
+
+        const myData = {
+            image, name, brandName, type, price, description, rating
+        }
+
+        fetch('http://localhost:5000/products', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(myData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Product added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+                form.reset()
+            })
     };
 
     return (
@@ -96,7 +132,7 @@ const AddProducts = () => {
                 <div className="text-center">
                     <button
                         type="submit"
-                        className="bg-amber-500 text-white py-2 px-4 rounded-md hover:bg-amber-600 focus:outline-none focus:bg-amber-600"
+                        className="bg-amber-600 text-white py-2 px-4 rounded-md hover:bg-amber-700 focus:outline-none  w-full focus:bg-amber-600"
                     >
                         Add
                     </button>

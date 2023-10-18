@@ -21,11 +21,12 @@ const myCreatedRouter = createBrowserRouter([
             {
                 path: '/:id',
                 element: <SingleBrand></SingleBrand>,
-                loader: () => fetch('/brand.json')
+                loader: () => fetch('/brand.json'),
             },
             {
                 path: '/addproducts',
-                element: <AddProducts></AddProducts>
+                element: <AddProducts></AddProducts>,
+                
             },
             {
                 path: '/mycart',
