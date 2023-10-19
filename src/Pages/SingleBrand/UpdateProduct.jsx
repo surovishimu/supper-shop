@@ -1,10 +1,10 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const UpdateProduct = () => {
     const updatedBrand = useLoaderData();
-    const { _id, image, name, brandName, type, description, price, rating } = updatedBrand;
+    const { _id, image, name, type, description, price, rating } = updatedBrand;
 
     const handleUpdate = (e) => {
         e.preventDefault();
@@ -46,6 +46,7 @@ const UpdateProduct = () => {
     };
     return (
         <div className="max-w-md mx-auto mt-10 mb-10 p-4 bg-white rounded-lg shadow-md">
+            <h1 className='text-2xl font-bold mb-5 text-center text-amber-500'>Update Product</h1>
             <form onSubmit={handleUpdate}>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="mb-4">
@@ -123,11 +124,12 @@ const UpdateProduct = () => {
                             Short Description
                         </label>
                         <textarea
-                            //    defaultValue={shortDescription}
+                            defaultValue={description}
                             id="shortDescription"
                             name="shortDescription"
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-amber-500"
-                        />
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-amber-500"></textarea>
+
+
                     </div>
 
                     <div className="mb-4">
@@ -150,7 +152,7 @@ const UpdateProduct = () => {
                         type="submit"
                         className="bg-amber-600 text-white py-2 px-4 rounded-md hover:bg-amber-700 focus:outline-none  w-full focus:bg-amber-600"
                     >
-                        Update
+                        Update Product
                     </button>
                 </div>
             </form>

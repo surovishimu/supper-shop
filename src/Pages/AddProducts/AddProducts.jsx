@@ -43,6 +43,7 @@ const AddProducts = () => {
 
     return (
         <div className="max-w-md mx-auto mt-10 mb-10 p-4 bg-white rounded-lg shadow-md">
+            <h1 className='text-2xl text-amber-500 font-bold mb-5 text-center'>Add Products from Featured Brands</h1>
             <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="mb-4">
@@ -140,7 +141,7 @@ const AddProducts = () => {
                         type="submit"
                         className="bg-amber-600 text-white py-2 px-4 rounded-md hover:bg-amber-700 focus:outline-none  w-full focus:bg-amber-600"
                     >
-                        Add
+                        Add Product
                     </button>
                 </div>
             </form>

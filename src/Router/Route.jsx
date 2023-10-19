@@ -8,6 +8,8 @@ import SingleBrand from "../Pages/SingleBrand/SingleBrand";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import ProductDetails from "../Pages/SingleBrand/ProductDetails";
 import UpdateProduct from "../Pages/SingleBrand/UpdateProduct";
+import Register from "../Pages/Login/Registration";
+import PrivateRout from "../PrivateRoute/PrivateRoute";
 
 
 
@@ -24,22 +26,26 @@ const myCreatedRouter = createBrowserRouter([
             },
             {
                 path: '/:id',
-                element: <SingleBrand></SingleBrand>,
+                element: <PrivateRout><SingleBrand></SingleBrand></PrivateRout>,
                 loader: () => fetch('/brand.json'),
             },
             {
                 path: '/addproducts',
-                element: <AddProducts></AddProducts>,
+                element: <PrivateRout><AddProducts></AddProducts></PrivateRout>,
 
             },
             {
                 path: '/mycart',
-                element: <Mycart></Mycart>,
+                element: <PrivateRout><Mycart></Mycart></PrivateRout>,
                 loader: () => fetch('http://localhost:5000/mycart')
             },
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             },
             {
                 path: '/brands/:id',
@@ -48,11 +54,12 @@ const myCreatedRouter = createBrowserRouter([
             },
             {
                 path: '/updatebrand/:id',
-                element: <UpdateProduct></UpdateProduct>,
+                element: <PrivateRout> <UpdateProduct></UpdateProduct></PrivateRout>,
                 loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
 
 
             }
+
         ]
     }
 ])
