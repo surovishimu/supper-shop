@@ -1,14 +1,21 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 // import { AiFillGoogleCircle } from 'react-icons/ai';
 const SocialLogin = () => {
-
+    const navigate = useNavigate()
     const { googleLogin } = useContext(AuthContext);
     const handleSocialLogin = (media) => {
         media()
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+            .then(() => {
+                toast.success('User logged in successfully');
+                navigate('/')
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
     }
     return (
         <>

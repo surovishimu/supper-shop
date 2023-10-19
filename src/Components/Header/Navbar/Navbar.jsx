@@ -1,9 +1,25 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 import UseAuth from "../../../Hooks/useAuth";
+import { useEffect, useState } from "react";
+import { BsMoon,BsSun } from 'react-icons/bs';
 
 const Navbar = () => {
     const { user, logOut } = UseAuth();
+    const [theme, setTheme] = useState('light');
+
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [theme])
+
+    const handleThemeSwitch = () => {
+        setTheme(theme === "dark" ? "light" : "dark");
+    }
+   
     const links = <>
         <li className="text-lg mr-2 font-semibold text-white" ><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-amber-600 font-semibold underline" : ""
@@ -16,7 +32,7 @@ const Navbar = () => {
         } to={'/mycart'}>My Cart</NavLink></li>
     </>
     return (
-        <div className="navbar bg-black">
+        <div className="navbar bg-black px-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost text-white  lg:hidden">
@@ -37,6 +53,9 @@ const Navbar = () => {
                 
             </div> */}
             <div className="navbar-end">
+                <button onClick={handleThemeSwitch} className=" text-white text-2xl mr-4">
+                {theme === 'dark' ? <BsSun/> : <BsMoon/>}
+                </button>
                 {
                     user?.email ? <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -66,6 +85,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                 }
+
             </div>
         </div>
     );

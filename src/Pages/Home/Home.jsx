@@ -5,8 +5,11 @@ import Category from "../../Components/Brands/category";
 import Feature from "../../Components/Brands/Feature";
 
 
+
 const Home = () => {
+
     const brands = useLoaderData()
+    
     return (
         <div>
             <Banner></Banner>
@@ -15,6 +18,7 @@ const Home = () => {
             <Feature></Feature>
         </div>
     );
+
 };
 
 export default Home;
