@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
 
 
 const BrandDetails = ({ brand }) => {
@@ -45,7 +46,7 @@ const BrandDetails = ({ brand }) => {
                 <p className="text-xl">Price:{price}</p>
                 <div className="card-actions justify-end">
                     <Link to={'/mycart'}>
-
+                       
                         <button onClick={handleAddToCart} className="btn bg-amber-600 text-white hover:bg-amber-700">Add to Cart</button></Link>
                 </div>
             </div>
@@ -53,5 +54,7 @@ const BrandDetails = ({ brand }) => {
 
     );
 };
-
+BrandDetails.propTypes = {
+    brand: PropTypes.object.isRequired
+}
 export default BrandDetails;
