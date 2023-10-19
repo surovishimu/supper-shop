@@ -25,7 +25,7 @@ const SingleBrand = () => {
 
     const filteredProducts = brands.filter(brand => brand.brandName.toLowerCase() === product.brand_name.toLowerCase());
 
-    console.log(filteredProducts);
+    // console.log(filteredProducts);
 
     return (
         <>

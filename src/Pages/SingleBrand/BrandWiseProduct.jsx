@@ -11,8 +11,8 @@ const BrandWiseProduct = ({ brand }) => {
         return stars;
     };
     return (
-        <div className="mt-20 mb-20 px-10 ">
-            <div className="card card-side bg-base-100 shadow-2xl ">
+        <div className="px-10 ">
+            <div className="card lg:card-side md:card-normal bg-base-100 shadow-2xl p-4 mt-10 mb-10">
                 <figure><img src={image} alt="Movie" /></figure>
                 <div className="card-body">
                     <h2 className="card-title font-bold text-black">{name}</h2>
@@ -27,7 +27,8 @@ const BrandWiseProduct = ({ brand }) => {
                     <Link to={`/brands/${_id}`}>
                         <button className="btn bg-amber-500 text-white hover:bg-amber-700">show details</button>
                     </Link>
-                    <button className="btn bg-amber-500 text-white hover:bg-amber-700">Update Product</button>
+                    <Link to={`/updatebrand/${_id}`}>
+                        <button className="btn bg-amber-500 text-white hover:bg-amber-700">Update Product</button></Link>
 
                 </div>
             </div>

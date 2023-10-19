@@ -8,9 +8,11 @@ const BrandDetails = ({ brand }) => {
     const { image, name, price, details } = brand;
 
     const [cart, setCart] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const handleAddToCart = () => {
         const mydata = { image, name, price, details };
+        setLoading(true);
 
         fetch('http://localhost:5000/mycart', {
             method: 'POST',
@@ -33,6 +35,9 @@ const BrandDetails = ({ brand }) => {
                 }
 
             })
+            .finally(() => {
+                setLoading(false);
+            });
     }
     return (
 
@@ -42,12 +47,14 @@ const BrandDetails = ({ brand }) => {
             </div>
             <div className="card-body flex-1">
                 <h2 className="card-title text-2xl">{name}</h2>
-                <p>About This Product:{details}</p>
+                <p><span className="text-xl font-semibold">About This Product:</span>{details}</p>
                 <p className="text-xl">Price:{price}</p>
                 <div className="card-actions justify-end">
                     <Link to={'/mycart'}>
-                       
-                        <button onClick={handleAddToCart} className="btn bg-amber-600 text-white hover:bg-amber-700">Add to Cart</button></Link>
+
+                        <button onClick={handleAddToCart} className="btn bg-amber-600 text-white hover:bg-amber-700">Add to Cart
+
+                            {loading && <span className="loading loading-spinner loading-lg"></span>}</button></Link>
                 </div>
             </div>
         </div>

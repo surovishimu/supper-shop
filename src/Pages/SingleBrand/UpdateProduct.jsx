@@ -1,8 +1,12 @@
-import Swal from 'sweetalert2'
+import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const AddProducts = () => {
 
-    const handleSubmit = (e) => {
+const UpdateProduct = () => {
+    const updatedBrand = useLoaderData();
+    const { _id, image, name, brandName, type, description, price, rating } = updatedBrand;
+
+    const handleUpdate = (e) => {
         e.preventDefault();
         const form = e.target;
         const image = form.image.value;
@@ -19,8 +23,8 @@ const AddProducts = () => {
             image, name, brandName, type, price, description, rating
         }
 
-        fetch('http://localhost:5000/products', {
-            method: 'POST',
+        fetch(`http://localhost:5000/products/${_id}`, {
+            method: 'PUT',
             headers: {
                 "Content-Type": "application/json",
             },
@@ -29,27 +33,27 @@ const AddProducts = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Product added successfully',
+                        text: 'Product updated successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
                 }
-                form.reset()
+
             })
     };
-
     return (
         <div className="max-w-md mx-auto mt-10 mb-10 p-4 bg-white rounded-lg shadow-md">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleUpdate}>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="mb-4">
                         <label htmlFor="image" className="block text-gray-700 font-bold">
                             Image
                         </label>
                         <input
+                            defaultValue={image}
                             type="text"
                             id="image"
                             name="image"
@@ -62,6 +66,7 @@ const AddProducts = () => {
                             Name
                         </label>
                         <input
+                            defaultValue={name}
                             type="text"
                             id="name"
                             name="name"
@@ -92,6 +97,7 @@ const AddProducts = () => {
                             Type
                         </label>
                         <input
+                            defaultValue={type}
                             type="text"
                             id="type"
                             name="type"
@@ -104,6 +110,7 @@ const AddProducts = () => {
                             Price
                         </label>
                         <input
+                            defaultValue={price}
                             type="text"
                             id="price"
                             name="price"
@@ -116,6 +123,7 @@ const AddProducts = () => {
                             Short Description
                         </label>
                         <textarea
+                            //    defaultValue={shortDescription}
                             id="shortDescription"
                             name="shortDescription"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-amber-500"
@@ -127,6 +135,7 @@ const AddProducts = () => {
                             Rating
                         </label>
                         <input
+                            defaultValue={rating}
                             type="text"
                             id="rating"
                             name="rating"
@@ -136,11 +145,12 @@ const AddProducts = () => {
                 </div>
 
                 <div className="text-center">
+
                     <button
                         type="submit"
                         className="bg-amber-600 text-white py-2 px-4 rounded-md hover:bg-amber-700 focus:outline-none  w-full focus:bg-amber-600"
                     >
-                        Add
+                        Update
                     </button>
                 </div>
             </form>
@@ -148,4 +158,4 @@ const AddProducts = () => {
     );
 };
 
-export default AddProducts;
+export default UpdateProduct;
