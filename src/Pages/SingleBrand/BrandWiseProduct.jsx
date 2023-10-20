@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import { AiOutlineEye } from 'react-icons/ai';
 import { BiPencil } from 'react-icons/bi';
 import { AiOutlineDelete } from 'react-icons/ai';
+import Swal from 'sweetalert2';
 
-
-const BrandWiseProduct = ({ brand }) => {
+const BrandWiseProduct = ({ brand, brands, setBrands }) => {
     const { _id, image, name, brandName, type, description, price, rating } = brand;
+
+
     const renderRatingStars = () => {
         const stars = [];
         for (let i = 1; i <= rating; i++) {
@@ -17,19 +19,46 @@ const BrandWiseProduct = ({ brand }) => {
 
     const handleDelete = (_id) => {
         console.log(_id);
-        fetch(`https://brand-shop-server-beta.vercel.app/products/${_id}`, {
-            method: "DELETE",
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://brand-shop-server-beta.vercel.app/products/${_id}`, {
+                    method: "DELETE",
+                })
+
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Coffee has been deleted.',
+                                'success'
+                            )
+                            const remaining = brands.filter(iteam => iteam._id !== _id);
+                            setBrands(remaining);
+                        }
+
+                    })
+
+            }
+
+
+
         })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-            })
     }
     return (
-        <div className="px-10 ">
+        <div className="px-10 flex flex-wrap ">
             <div className="card lg:card-side md:card-normal bg-base-100 shadow-2xl p-4 mt-10 mb-10">
-                <figure><img src={image} alt="Movie" /></figure>
-                <div className="card-body">
+                <figure className='flex-1 '><img src={image} alt="Movie" /></figure>
+                <div className="card-body flex-1">
                     <h2 className="card-title font-bold text-black">{name}</h2>
                     <h2 className="text-lg font-semibold text-amber-500"><span className="text-xl font-bold text-black">Brans Name:</span>{brandName}</h2>
                     <h2><span >Type:</span>{type}</h2>
@@ -57,6 +86,8 @@ const BrandWiseProduct = ({ brand }) => {
     );
 };
 BrandWiseProduct.propTypes = {
-    brand: PropTypes.object.isRequired
+    brand: PropTypes.object.isRequired,
+    brands: PropTypes.array.isRequired,
+    setBrands: PropTypes.array.isRequired
 }
 export default BrandWiseProduct;

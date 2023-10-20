@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 import UseAuth from "../../../Hooks/useAuth";
 import { useEffect, useState } from "react";
-import { BsMoon,BsSun } from 'react-icons/bs';
+import { BsMoon, BsSun } from 'react-icons/bs';
 
 const Navbar = () => {
     const { user, logOut } = UseAuth();
@@ -19,15 +19,15 @@ const Navbar = () => {
     const handleThemeSwitch = () => {
         setTheme(theme === "dark" ? "light" : "dark");
     }
-   
+
     const links = <>
-        <li className="text-lg mr-2 font-semibold text-white" ><NavLink className={({ isActive, isPending }) =>
+        <li className="text-lg mr-2 font-semibold lg:text-white md:text-black text-black" ><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-amber-600 font-semibold underline" : ""
         } to={'/'}>Home</NavLink></li>
-        <li className="text-lg mr-2 font-semibold  text-white"><NavLink className={({ isActive, isPending }) =>
+        <li className="text-lg mr-2 font-semibold  lg:text-white md:text-black text-black"><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-amber-600 font-semibold underline" : ""
         } to={'/addproducts'}>Add Product</NavLink></li>
-        <li className="text-lg font-semibold  text-white"><NavLink className={({ isActive, isPending }) =>
+        <li className="text-lg font-semibold  lg:text-white md:text-black text-black"><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-amber-600 font-semibold underline" : ""
         } to={'/mycart'}>My Cart</NavLink></li>
     </>
@@ -54,7 +54,7 @@ const Navbar = () => {
             </div> */}
             <div className="navbar-end">
                 <button onClick={handleThemeSwitch} className=" text-white text-2xl mr-4">
-                {theme === 'dark' ? <BsSun/> : <BsMoon/>}
+                    {theme === 'dark' ? <BsSun /> : <BsMoon />}
                 </button>
                 {
                     user?.email ? <div className="dropdown dropdown-end">

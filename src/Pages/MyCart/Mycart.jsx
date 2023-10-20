@@ -22,21 +22,22 @@ const Mycart = () => {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`https://brand-shop-server-beta.vercel.app/mycart/${id}`, {
-          method: 'DELETE'
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            // Filter out the deleted item from the cart
-            const filteredProduct = updateProduct.filter(item => item._id !== id);
-            setUpdateProduct(filteredProduct);
+    })
+      .then((result) => {
+        if (result.isConfirmed) {
+          fetch(`https://brand-shop-server-beta.vercel.app/mycart/${id}`, {
+            method: 'DELETE'
           })
-        Swal.fire('Deleted!', 'Your product has been deleted.', 'success');
-      }
-    });
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              // Filter out the deleted item from the cart
+              const filteredProduct = updateProduct.filter(item => item._id !== id);
+              setUpdateProduct(filteredProduct);
+            })
+          Swal.fire('Deleted!', 'Your product has been deleted.', 'success');
+        }
+      });
   }
 
   return (

@@ -8,8 +8,8 @@ const Banner = () => {
         className="w-full h-[80vh]"
       />
       <div className="absolute top-0 left-0 w-full h-full bg-opacity-50 bg-black flex flex-col justify-center items-center text-white p-4">
-        <h1 className="text-4xl font-bold">Elegance in Bloom</h1>
-        <p className="text-lg">Discover the Beauty of Orchids - Your Gateway to Radiant Elegance</p>
+        <h1 className="lg:text-6xl md:text-4xl text-3xl font-semibold mb-4">Elegance in Bloom</h1>
+        <p className="lg:text-xl md:text-lg text-sm">Discover the Beauty of Orchids - Your Gateway to Radiant Elegance</p>
       </div>
     </div>
   );

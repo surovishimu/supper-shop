@@ -11,6 +11,8 @@ const SingleBrand = () => {
     const { id } = useParams();
     const brand = useLoaderData();
 
+
+
     useEffect(() => {
         fetch('https://brand-shop-server-beta.vercel.app/products')
             .then(res => res.json())
@@ -60,7 +62,10 @@ const SingleBrand = () => {
                     ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
                             {filteredProducts.map(brand => (
-                                <BrandWiseProduct key={brand._id} brand={brand}
+                                <BrandWiseProduct
+                                    brands={brands}
+                                    setBrands={setBrands}
+                                    key={brand._id} brand={brand}
                                 ></BrandWiseProduct>
                             ))}
                         </div>
