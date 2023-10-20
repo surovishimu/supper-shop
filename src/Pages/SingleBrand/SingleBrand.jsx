@@ -11,7 +11,7 @@ const SingleBrand = () => {
     const { id } = useParams();
     const brand = useLoaderData();
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://brand-shop-server-beta.vercel.app/products')
             .then(res => res.json())
             .then(data => {
                 setBrands(data);

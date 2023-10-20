@@ -1,12 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Mycart = () => {
   const myCart = useLoaderData();
-  const [updateProduct, setUpdateProduct] = useState(myCart)
+  const [updateProduct, setUpdateProduct] = useState(myCart);
 
+  useEffect(() => {
+    setUpdateProduct(myCart);
+  }, [myCart]);
 
   const handleDelete = (id) => {
     console.log(id);
@@ -20,29 +23,23 @@ const Mycart = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/mycart/${id}`,
-          {
-            method: 'DELETE'
-          })
+        fetch(`https://brand-shop-server-beta.vercel.app/mycart/${id}`, {
+          method: 'DELETE'
+        })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-
-            const filteredProduct = updateProduct.filter(item => item._id !== id)
-            setUpdateProduct(filteredProduct)
+            // Filter out the deleted item from the cart
+            const filteredProduct = updateProduct.filter(item => item._id !== id);
+            setUpdateProduct(filteredProduct);
           })
-        Swal.fire(
-          'Deleted!',
-          'Your product has been deleted.',
-          'success'
-        )
+        Swal.fire('Deleted!', 'Your product has been deleted.', 'success');
       }
-    })
-
+    });
   }
+
   return (
     <div className="my-20">
-
       <table className="border-collapse border mx-auto">
         <thead>
           <tr>
@@ -57,7 +54,7 @@ const Mycart = () => {
               <td className="border p-2">{item.name}</td>
               <td className="border p-2">{item.price}</td>
               <td className="border p-2">
-                <RiDeleteBin6Line onClick={() => handleDelete(item._id)} className="text-red-500 mx-auto" ></RiDeleteBin6Line>
+                <RiDeleteBin6Line onClick={() => handleDelete(item._id)} className="text-red-500 mx-auto" />
               </td>
             </tr>
           ))}
@@ -66,8 +63,5 @@ const Mycart = () => {
     </div>
   );
 };
-
-
-
 
 export default Mycart;
