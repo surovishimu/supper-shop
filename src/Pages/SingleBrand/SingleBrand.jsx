@@ -38,9 +38,9 @@ const SingleBrand = () => {
                 </div>
             ) : (
                 <div>
-                    <div className="carousel w-full h-[70vh]">
+                    <div className="carousel w-full lg:h-[70vh] md:[h-60vh] h-[40vh]">
                         <div id="item1" className="carousel-item w-full">
-                            <img src={product.slider_1} className="w-full" />
+                            <img src={product.slider_1} className="w-full " />
                         </div>
                         <div id="item2" className="carousel-item w-full">
                             <img src={product.slider_2} className="w-full" />
