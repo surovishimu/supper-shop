@@ -1,7 +1,8 @@
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
 import UseAuth from '../../Hooks/useAuth';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const { createUser, handleUpdateprofile } = UseAuth();
@@ -46,6 +47,11 @@ const Register = () => {
     }
     return (
         <>
+            <Helmet>
+                <title>
+                    Orchid Beauty | Sign Up
+                </title>
+            </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-col">
                     <div className="text-center lg:text-left">

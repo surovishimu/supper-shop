@@ -3,10 +3,12 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import PropTypes from 'prop-types';
 
+
 const BrandDetails = ({ brand }) => {
     const { image, name, price, details } = brand;
 
-    const [cart, setCart] = useState([]);
+
+  
     const [loading, setLoading] = useState(false);
 
     const handleAddToCart = () => {
@@ -31,8 +33,7 @@ const BrandDetails = ({ brand }) => {
                         confirmButtonText: 'Cool'
                     });
 
-                    // Update the local cart state with the newly added item
-                    setCart([...cart, mydata]);
+
                 }
             })
             .catch(error => {

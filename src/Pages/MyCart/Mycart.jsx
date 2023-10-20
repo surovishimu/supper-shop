@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import Swal from "sweetalert2";
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Mycart = () => {
   const myCart = useLoaderData();
@@ -40,6 +41,11 @@ const Mycart = () => {
 
   return (
     <div className="my-20">
+      <Helmet>
+        <title>
+          Orchid Beauty | My Cart
+        </title>
+      </Helmet>
       <table className="border-collapse border mx-auto">
         <thead>
           <tr>

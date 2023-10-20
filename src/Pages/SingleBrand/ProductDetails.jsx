@@ -8,16 +8,17 @@ const ProductDetails = () => {
     const { id } = useParams();
 
     const brands = useLoaderData();
-
+   
     useEffect(() => {
         const findProduct = brands?.find(brand => brand._id === id)
         setBrand(findProduct)
     }, [brands, id])
-    
+
     return (
 
         <div>
-            <BrandDetails brand={brand}> </BrandDetails>
+            <BrandDetails brand={brand}
+                > </BrandDetails>
         </div>
     );
 };

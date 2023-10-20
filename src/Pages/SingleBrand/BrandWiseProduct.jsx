@@ -1,5 +1,9 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { AiOutlineEye } from 'react-icons/ai';
+import { BiPencil } from 'react-icons/bi';
+import { AiOutlineDelete } from 'react-icons/ai';
+
 
 const BrandWiseProduct = ({ brand }) => {
     const { _id, image, name, brandName, type, description, price, rating } = brand;
@@ -10,6 +14,17 @@ const BrandWiseProduct = ({ brand }) => {
         }
         return stars;
     };
+
+    const handleDelete = (_id) => {
+        console.log(_id);
+        fetch(`https://brand-shop-server-beta.vercel.app/products/${_id}`, {
+            method: "DELETE",
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            })
+    }
     return (
         <div className="px-10 ">
             <div className="card lg:card-side md:card-normal bg-base-100 shadow-2xl p-4 mt-10 mb-10">
@@ -24,11 +39,17 @@ const BrandWiseProduct = ({ brand }) => {
                     <h2>Price:{price}</h2>
                     <p>Rating:{renderRatingStars()}</p>
 
-                    <Link to={`/brands/${_id}`}>
-                        <button className="btn bg-amber-500 text-white hover:bg-amber-700">show details</button>
-                    </Link>
-                    <Link to={`/updatebrand/${_id}`}>
-                        <button className="btn bg-amber-500 text-white hover:bg-amber-700">Update Product</button></Link>
+                    <div className='flex gap-2 mt-2'>
+                        <Link to={`/brands/${_id}`}>
+                            <button className="tooltip tooltip-left btn bg-orange-400 text-white hover:bg-orange-400 normal-case" data-tip="See Details"><AiOutlineEye className='text-xl'></AiOutlineEye></button>
+                        </Link>
+                        <Link to={`/updatebrand/${_id}`}>
+                            <button className="tooltip tooltip-top btn bg-black text-white hover:bg-black normal-case" data-tip="Update Product"><BiPencil className='text-xl'></BiPencil></button>
+                        </Link>
+
+                        <button onClick={() => handleDelete(_id)} className="tooltip tooltip-right btn bg-red-500 text-white hover:bg-red-500 normal-case" data-tip="Delete Product"><AiOutlineDelete className='text-xl'></AiOutlineDelete></button>
+
+                    </div>
 
                 </div>
             </div>

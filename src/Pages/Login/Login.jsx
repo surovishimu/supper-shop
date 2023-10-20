@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
 import UseAuth from '../../Hooks/useAuth';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
@@ -25,6 +26,11 @@ const Login = () => {
     }
     return (
         <>
+        <Helmet>
+        <title>
+          Orchid Beauty | Log in
+        </title>
+      </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col ">
                     <div className="text-center lg:text-left">
