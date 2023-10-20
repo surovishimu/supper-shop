@@ -20,7 +20,9 @@ const Category = () => {
         fetchData();
     }, []);
     return (
-        <div className="mt-20">
+        <div className="mt-20" data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500">
             <h1 className="text-4xl font-semibold text-center my-10">Shop By Category</h1>
             <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-5 px-20 mb-10">
                 {data.map((item) => (

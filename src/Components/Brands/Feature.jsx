@@ -3,8 +3,10 @@
 const Feature = () => {
     return (
         <div>
-            <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 space-x-4  bg-white shadow-md rounded-lg sm:p-8 h-56 mx">
-                <div className="flex items-center space-x-2">
+            <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 space-x-4  bg-white shadow-md rounded-lg sm:p-8 h-56 mx" data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000">
+                <div className="flex items-center space-x-2" >
                     <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqlZhXmurqbPtW3f0RhfGYWZgJogEsrrSO7Fr0ROIJc9NfQwQVDKzHDZUadOKk0Vf_yTE&usqp=CAU" alt="" className="w-full h-full object-contain" />
                     </div>
