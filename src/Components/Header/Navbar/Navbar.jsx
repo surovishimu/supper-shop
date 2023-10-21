@@ -4,8 +4,10 @@ import UseAuth from "../../../Hooks/useAuth";
 import { useEffect, useState } from "react";
 import { BsMoon, BsSun } from 'react-icons/bs';
 
+
 const Navbar = () => {
-    const { user, logOut } = UseAuth();
+
+    const { user, logOut, loading } = UseAuth();
     const [theme, setTheme] = useState('light');
 
     useEffect(() => {
@@ -20,6 +22,7 @@ const Navbar = () => {
         setTheme(theme === "dark" ? "light" : "dark");
     }
 
+
     const links = <>
         <li className="text-lg mr-2 font-semibold lg:text-white md:text-black text-black" ><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-amber-600 font-semibold underline" : ""
@@ -30,7 +33,12 @@ const Navbar = () => {
         <li className="text-lg font-semibold  lg:text-white md:text-black text-black"><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-amber-600 font-semibold underline" : ""
         } to={'/mycart'}>My Cart</NavLink></li>
+
     </>
+
+
+
+
     return (
         <div className="navbar bg-black px-5">
             <div className="navbar-start">
@@ -59,6 +67,8 @@ const Navbar = () => {
                 {
                     user?.email ? <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+
+
                             <div className="w-10 rounded-full">
                                 <img src={user.photoURL} alt={user.displayName} />
                             </div>
@@ -66,7 +76,6 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li>
                                 <button className="btn btn-sm text-black btn-ghost">{user.displayName}</button>
-
                             </li>
                             <li>
                                 <button className="btn btn-sm  btn-ghost"
@@ -79,9 +88,10 @@ const Navbar = () => {
                         :
                         <ul className=" flex ">
                             <li className="text-lg font-semibold  text-white">
-                                <NavLink className={({ isActive, isPending }) =>
+
+                                {loading ? <span className="loading loading-spinner loading-sm"></span> : <NavLink className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "text-amber-600 underline" : ""
-                                } to={'/login'}>Login</NavLink>
+                                } to={'/login'}>Login</NavLink>}
                             </li>
                         </ul>
                 }

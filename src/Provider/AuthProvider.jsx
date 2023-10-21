@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { auth } from "../Config/firebaseConfig";
 import PropTypes from 'prop-types';
+import toast from "react-hot-toast";
 
 
 
@@ -32,6 +33,7 @@ const AuthProvider = ({ children }) => {
     // signOut
 
     const logOut = () => {
+        toast.success('You have been logged out.')
         return signOut(auth)
     }
     // profile update

@@ -6,18 +6,25 @@ import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
-    const { signInUser } = UseAuth();
+    const { signInUser} = UseAuth();
     const navigate = useNavigate()
     const handleSignIn = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
 
+      
 
         //sign in 
         signInUser(email, password)
+
             .then(() => {
-                toast.success('user Login succesfully');
+                toast.success(
+                    "Loged in successfully",
+                    {
+                        duration: 6000,
+                    }
+                );
                 navigate('/')
 
             })
@@ -26,11 +33,11 @@ const Login = () => {
     }
     return (
         <>
-        <Helmet>
-        <title>
-          Orchid Beauty | Log in
-        </title>
-      </Helmet>
+            <Helmet>
+                <title>
+                    Orchid Beauty | Log in
+                </title>
+            </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col ">
                     <div className="text-center lg:text-left">

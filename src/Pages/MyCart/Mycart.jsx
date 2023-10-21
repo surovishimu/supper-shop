@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
+
 const Mycart = () => {
   const myCart = useLoaderData();
   const [updateProduct, setUpdateProduct] = useState(myCart);
@@ -11,6 +12,9 @@ const Mycart = () => {
   useEffect(() => {
     setUpdateProduct(myCart);
   }, [myCart]);
+
+
+
 
   const handleDelete = (id) => {
     console.log(id);
