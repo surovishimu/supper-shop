@@ -3,17 +3,22 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 import Swal from "sweetalert2";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-
+import UseAuth from "../../Hooks/useAuth";
 
 const Mycart = () => {
   const myCart = useLoaderData();
   const [updateProduct, setUpdateProduct] = useState(myCart);
+  const [filterCart, setFilterCart] = useState([]);
 
+  const { user } = UseAuth()
   useEffect(() => {
     setUpdateProduct(myCart);
   }, [myCart]);
 
-
+  useEffect(() => {
+    const userProduct = updateProduct.filter(iteam => iteam.email == user.email);
+    setFilterCart(userProduct);
+  }, [updateProduct, user.email])
 
 
   const handleDelete = (id) => {
@@ -60,7 +65,7 @@ const Mycart = () => {
           </tr>
         </thead>
         <tbody>
-          {updateProduct.map((item) => (
+          {filterCart.map((item) => (
             <tr key={item._id}>
               <td className="border p-2">{item.name}</td>
               <td className="border p-2">{item.price}</td>

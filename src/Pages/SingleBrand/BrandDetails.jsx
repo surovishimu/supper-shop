@@ -2,17 +2,19 @@ import { useState } from "react";
 
 import Swal from "sweetalert2";
 import PropTypes from 'prop-types';
+import UseAuth from "../../Hooks/useAuth";
 
 
 const BrandDetails = ({ brand }) => {
     const { image, name, price, details } = brand;
 
 
-  
-    const [loading, setLoading] = useState(false);
 
-    const handleAddToCart = () => {
-        const mydata = { image, name, price, details };
+    const [loading, setLoading] = useState(false);
+    const { user } = UseAuth();
+
+    const handleAddToCart = (email) => {
+        const mydata = { image, name, price, details, email };
         setLoading(true);
 
         fetch('https://brand-shop-server-beta.vercel.app/mycart', {
@@ -55,7 +57,7 @@ const BrandDetails = ({ brand }) => {
                 <p className="text-xl">Price: {price}</p>
                 <div className="card-actions justify-end">
 
-                    <button onClick={handleAddToCart} className="btn bg-amber-600 text-white hover:bg-amber-700">Add to Cart
+                    <button onClick={() => handleAddToCart(user.email)} className="btn bg-amber-600 text-white hover:bg-amber-700">Add to Cart
                         {loading && <span className="loading loading-spinner loading-lg"></span>}
                     </button>
 
