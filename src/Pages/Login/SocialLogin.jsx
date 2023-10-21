@@ -20,8 +20,8 @@ const SocialLogin = () => {
     return (
         <>
             <div className="divider"></div>
-            <div className="">
-                <button onClick={() => handleSocialLogin(googleLogin)} className="btn  w-full md:text-lg text-sm normal-case btn-outline hover:bg-amber-500 hover:border-none"><img className="h-7" src="https://i.ibb.co/J3yZt7b/google.png" alt="" />Continue with Google</button>
+            <div className="mb-4 flex justify-center">
+                <button onClick={() => handleSocialLogin(googleLogin)} className="btn  md:text-lg text-sm normal-case btn-outline hover:bg-amber-500 hover:border-none"><img className="h-7" src="https://i.ibb.co/J3yZt7b/google.png" alt="" />Continue with Google</button>
             </div>
         </>
     );

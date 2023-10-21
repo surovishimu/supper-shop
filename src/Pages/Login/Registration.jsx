@@ -95,6 +95,7 @@ const Register = () => {
                         </form>
                         <SocialLogin></SocialLogin>
                     </div>
+
                 </div>
             </div>
         </>

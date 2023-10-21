@@ -71,6 +71,7 @@ const Login = () => {
                         </form>
                         <SocialLogin></SocialLogin>
                     </div>
+
                 </div>
             </div>
         </>
