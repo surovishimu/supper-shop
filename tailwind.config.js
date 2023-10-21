@@ -4,15 +4,15 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode:"class",
+  darkMode: "class",
   theme: {
     extend: {
-      fontFamily:{
-        greatVive: "'Great Vibes', cursive"
+      fontFamily: {
+        Merriweather: "'Merriweather', serif"
       }
     },
   },
   plugins: [require("daisyui")],
-  
+
 }
 

@@ -16,7 +16,7 @@ const MainLayout = () => {
     );
     return (
 
-        <div className="bg-white dark:bg-gray-900">
+        <div className="bg-white dark:bg-gray-900 font-Merriweather">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
