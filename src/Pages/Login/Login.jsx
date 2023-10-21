@@ -6,14 +6,14 @@ import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
-    const { signInUser} = UseAuth();
+    const { signInUser } = UseAuth();
     const navigate = useNavigate()
     const handleSignIn = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-      
+
 
         //sign in 
         signInUser(email, password)
@@ -67,8 +67,9 @@ const Login = () => {
                             <label className="label">
                                 New here? <Link to="/register" className="label-text-alt link link-hover">Create an account</Link>
                             </label>
-                            <SocialLogin></SocialLogin>
+
                         </form>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
